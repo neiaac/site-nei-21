@@ -1,0 +1,28 @@
+@import "/styles/mixins.scss";
+@import "/styles/variables.scss";
+
+.footer {
+  @include font($weight: 700);
+  height: 10vh;
+  margin-top: 10vh;
+  background-color: $blue;
+  color: $white;
+
+  >div {
+    @include flex($justify: space-between);
+    @include size(80%, 100%);
+    margin: 0 auto;
+
+    .social {
+      @include flex();
+
+      >a {
+        width: 2rem;
+
+        &:first-child {
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+}

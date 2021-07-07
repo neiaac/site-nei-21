@@ -1,0 +1,47 @@
+@import "/styles/variables.scss";
+
+@mixin flex($direction: row, $align: center, $justify: initial) {
+  display: flex;
+  align-items: $align;
+
+  @if $direction !=row {
+    flex-direction: $direction;
+  }
+
+  @if $justify !=initial {
+    justify-content: $justify;
+  }
+}
+
+@mixin grid($gap: 0, $row: 1fr, $column: 1fr, $align: initial, $place: initial) {
+  display: grid;
+  grid-gap: #{$gap}rem;
+
+  @if ($row != 1fr or $column != 1fr) {
+    grid: $row / $column;
+  }
+
+  @if $align != initial {
+    align-items: center;
+  }
+
+  @if $place !=initial {
+    place-content: $place;
+  }
+}
+
+@mixin font($style: normal, $weight: 400, $size: 1rem, $line: 1.5rem, $family: $archivo) {
+  font: $style $weight #{$size}/#{$line} $family;
+}
+
+@mixin container($padding: 1rem, $radius: $radius, $color: $white) {
+  padding: $padding;
+  border-radius: $radius;
+  background: $color;
+  background-color: $color;
+}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}

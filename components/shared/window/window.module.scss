@@ -1,0 +1,39 @@
+@import "/styles/mixins.scss";
+@import "/styles/variables.scss";
+
+.window {
+  max-width: 75%;
+  height: fit-content;
+  box-shadow: $shadow;
+
+  .tab {
+    @include flex();
+    @include container(0.75rem 1rem, $radius $radius 0 0, $blue);
+    width: 100%;
+
+    >div {
+      @include size(1rem, 1rem);
+      border-radius: 50%;
+      background-color: $yellow;
+      margin-right: 1rem;
+
+      &:first-child {
+        background-color: $red;
+      }
+
+      &:last-child {
+        background-color: $green;
+        margin-right: 0;
+      }
+    }
+  }
+
+  .content {
+    @include container(2rem, 0 0 $radius $radius, $lightgrey);
+
+    img {
+      border-radius: $radius;
+      object-fit: cover;
+    }
+  }
+}
