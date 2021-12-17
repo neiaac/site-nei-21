@@ -24,7 +24,66 @@ export default function Team() {
         <Member name="Nome" role="Cargo" photo="placeholder"/>
         <Member name="Nome" role="Cargo" />
         <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
         <Member name="Nome" role="Cargo" />
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" />
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" />
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" />
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" />
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" />
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" />
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" />
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" />
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" />
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" />
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" />
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" />
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" />
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" />
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" />
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" />
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" photo="placeholder"/>
+        <Member name="Nome" role="Cargo" />
+        
       </div>
     </main>
   );
