@@ -1,0 +1,43 @@
+@import "/styles/mixins.scss";
+
+.content {
+  margin-top: 4rem;
+
+  @media only screen and (max-width: $tablet) {
+    margin-top: 2rem;
+  }
+
+  .links {
+    @include flex(column, flex-start);
+    @include font($size: 1.25rem, $line: 1.5rem);
+    color: $blue;
+
+    a {
+      @include flex();
+      gap: 1rem;
+
+      &:not(:last-child) {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  >div:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+
+  p:not(:last-child),
+  h2,
+  h3 {
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    @include font($size: 1.5rem, $line: 2rem, $family: $archivo-black);
+    text-transform: uppercase;
+  }
+
+  h3 {
+    @include font($size: 1.5rem, $line: 2rem, $family: $archivo-black);
+  }
+}

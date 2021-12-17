@@ -1,11 +1,9 @@
 @import "/styles/mixins.scss";
-@import "/styles/variables.scss";
 
 .button {
   @include font(normal, 400, 1rem, 1.25rem, $archivo-black);
+  @include container(0.5rem 1.75rem);
   width: fit-content;
-  padding: .25rem 1.75rem;
-  border-radius: $radius;
   color: $white;
   box-shadow: $shadow;
   text-transform: uppercase;
@@ -16,5 +14,9 @@
 
   &.blue {
     background-color: $blue;
+  }
+
+  &.grey {
+    background-color: $grey;
   }
 }

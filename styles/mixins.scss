@@ -1,8 +1,9 @@
 @import "/styles/variables.scss";
 
-@mixin flex($direction: row, $align: center, $justify: initial) {
+@mixin flex($direction: row, $align: center, $justify: initial, $gap: 0rem) {
   display: flex;
   align-items: $align;
+  gap: $gap;
 
   @if $direction !=row {
     flex-direction: $direction;

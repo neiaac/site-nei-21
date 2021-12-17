@@ -1,0 +1,46 @@
+@import "/styles/mixins.scss";
+
+.content {
+  margin-top: 4rem;
+
+  @media only screen and (max-width: $tablet) {
+    margin-top: 2rem;
+  }
+
+  >div:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+
+  p:not(:last-child), h2, h3 {
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    @include font($size: 1.5rem, $line: 2rem, $family: $archivo-black);
+    text-transform: uppercase;
+  }
+
+  h3 {
+    @include font($size: 1.5rem, $line: 2rem, $family: $archivo-black);
+  }
+
+  h4 {
+    margin-bottom: 0.5rem;
+  }
+
+  .blue {
+    color: $blue;
+  }
+
+  .topic {
+    @include grid(2, 1fr, 2rem 1fr);
+
+    >span {
+      @include flex(row, center, center);
+      @include container(0, $radius, $blue);
+      @include size(2rem, 2rem);
+      color: $white;
+      font-weight: 900;
+    }
+  }
+}
