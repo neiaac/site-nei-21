@@ -7,6 +7,7 @@ body {
   @include container(0, 0, $white);
   margin: 0;
   font-size: 16px;
+  overflow-x: hidden;
 
   a {
     color: inherit;

@@ -1,67 +1,22 @@
+import List from "../components/about/list";
 import Title from "../components/shared/title";
 import Window from "../components/shared/window";
-import styles from "../styles/about.module.scss";
+import { about, contacts, inline } from "../styles/about.module.scss";
+
+const locals = [{name: "Departamento de Engenharia Informática"}, {name: "Faculdade de Ciências e Tecnologia"}, {name: "Universidade de Coimbra"}, {name: "Pólo II - Pinhal de Marrocos"}, {name: "3030-290 Coimbra"}];
+const contactsNei = [{name: "239 790 002", icon: "phone"}, {name: "tp.cu.ied.tneduts@caaien", icon: "phone"}, {name: "tp.acimedaca@ien ", icon: "phone"}, {name: "Sala C4.3 (Torre C)", icon: "phone"}, {name: "facebook.com/neiaac", icon: "phone"}];
+const contactsDei = [{name: "239 790 000", icon: "phone"}, {name: "tp.cu.ied@ofni", icon: "phone"}, {name: "dei.uc.pt", icon: "phone"}, {name: "Dep.Engenharia.Informatica.U.Coimbra", icon: "phone"}];
 
 export default function About() {
   return (
-    <main className={styles.about}>
-      <Window img="placeholder" />
-      <div className={styles.contacts}>
+    <main className={about}>
+      <Window img="about" />
+      <div className={contacts}>
         <Title title="sobre"/>
-        <div className={styles.info}>
-          <h3>Localização</h3>
-          <p>
-            Departamento de Engenharia Informática
-            <br />
-            Faculdade de Ciências e Tecnologia
-            <br />
-            Universidade de Coimbra
-            <br />
-            Pólo II - Pinhal de Marrocos
-            <br />
-            3030-290 Coimbra
-            <br />
-          </p>
-        </div>
-        <div className={styles.inline}>
-          <div className={styles.info}>
-            <h3>Contactos Nei</h3>
-            <div>
-              <img src="/icons/phone.svg" alt="adasd"></img>
-              <span>aaa</span>
-            </div>
-            <div>
-              <img src="/icons/phone.svg" alt="adasd"></img>
-              <span>aaa</span>
-            </div>
-            <div>
-              <img src="/icons/phone.svg" alt="adasd"></img>
-              <span>aaa</span>
-            </div>
-            <div>
-              <img src="/icons/phone.svg" alt="adasd"></img>
-              <span>aaa</span>
-            </div>
-          </div>
-          <div className={styles.info}>
-            <h3>Contactos Dei</h3>
-            <div>
-              <img src="/icons/phone.svg" alt="adasd"></img>
-              <span>aaa</span>
-            </div>
-            <div>
-              <img src="/icons/phone.svg" alt="adasd"></img>
-              <span>aaa</span>
-            </div>
-            <div>
-              <img src="/icons/phone.svg" alt="adasd"></img>
-              <span>aaa</span>
-            </div>
-            <div>
-              <img src="/icons/phone.svg" alt="adasd"></img>
-              <span>aaa</span>
-            </div>
-          </div>
+        <List title="localização" content={locals} />
+        <div className={inline}>
+          <List icon title="Contactos Nei" content={contactsNei} />
+          <List icon title="Contactos Dei" content={contactsDei} />
         </div>
       </div>
     </main>

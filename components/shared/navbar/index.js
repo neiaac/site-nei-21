@@ -2,7 +2,6 @@ import Link from "next/link";
 import styles from "./navbar.module.scss"
 
 export default function Navbar() {
-  console.log("1");
   return (
     <nav className={styles.navbar}>
       <Link href="/">

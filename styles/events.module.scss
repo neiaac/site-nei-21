@@ -1,0 +1,28 @@
+@import "/styles/mixins.scss";
+@import "/styles/variables.scss";
+
+.events {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  section {
+    @include grid(3, 1fr, 1fr 1fr);
+    width: 80%;
+
+    .images {
+      @include grid(3, 1fr, repeat(auto-fill, 1fr));
+
+      button {
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+
+      >div {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 2rem;
+      }
+    }
+  }
+}

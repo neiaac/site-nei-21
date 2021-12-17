@@ -9,7 +9,7 @@ export default function Window({ img }) {
         <div></div> 
       </div>
       <div className={styles.content}>
-        <img src={img + ".JPG"} alt="" />
+        <img src={img + ".png"} alt="" />
       </div>
     </div> 
   )

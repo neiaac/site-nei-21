@@ -1,0 +1,33 @@
+@import "/styles/mixins.scss";
+@import "/styles/variables.scss";
+
+.list {
+  margin-bottom: 2rem;
+
+  h6 {
+    @include font(normal, 400, 1.5rem, 2rem, $archivo-black);
+    margin-bottom: 0.5rem;
+    color: $blue;
+    text-transform: uppercase;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.25rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      img {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@import "/styles/mixins.scss";
+@import "/styles/variables.scss";
+
+.calendar {
+  display: flex;
+  flex-direction: column;
+
+  .year {
+    @include font(normal, 400, 2rem, 2.5rem, $archivo-black);
+    margin-bottom: 2rem;
+  }
+  .month {
+    @include font(normal, 400, 1.5rem, 2rem, $archivo-black);
+    margin: 0 0 1rem 5%;
+    color: $blue;
+  }
+  .day {
+    margin: 0 0 1rem 10%;
+
+    span:last-child {
+      @include font(normal, 400, 1rem, 1.5rem, $archivo-black);
+      margin-left: 1rem;
+    }
+  }
+}
