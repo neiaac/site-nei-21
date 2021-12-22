@@ -1,13 +1,15 @@
 @import "/styles/mixins.scss";
-@import "/styles/variables.scss";
 
 .calendar {
-  display: flex;
-  flex-direction: column;
+  @include flex(column, flex-start);
 
   .year {
     @include font(normal, 400, 2rem, 2.5rem, $archivo-black);
     margin-bottom: 2rem;
+
+    &:not(:first-child) {
+      margin-top: 4rem;
+    }
   }
   .month {
     @include font(normal, 400, 1.5rem, 2rem, $archivo-black);

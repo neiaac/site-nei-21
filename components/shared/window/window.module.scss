@@ -1,5 +1,4 @@
 @import "/styles/mixins.scss";
-@import "/styles/variables.scss";
 
 .window {
   max-width: 70%;
@@ -13,8 +12,7 @@
 
     >div {
       @include size(1rem, 1rem);
-      border-radius: 50%;
-      background-color: $yellow;
+      @include container(0, 50%, $yellow);
       margin-right: 1rem;
 
       &:first-child {
@@ -22,14 +20,14 @@
       }
 
       &:last-child {
-        background-color: $green;
         margin-right: 0;
+        background-color: $green;
       }
     }
   }
 
   .content {
-    @include container(15%, 0 0 $radius $radius, $lightgrey);
+    @include container(10%, 0 0 $radius $radius, $lightgrey);
 
     img {
       border-radius: $radius;

@@ -1,22 +1,22 @@
 import { content, links } from './regulation.module.scss';
 
 const Guides = () => (
-  <div className={content}>
+  <section className={content}>
     <div className={links}>
       <a href="" target="_blank">
-        <img src="icons/arrow.svg" alt="arrow icon" />
+        <img src="icons/arrow_blue.svg" alt="arrow icon" />
         <span>Regulamento Pedagógico da Universidade de Coimbra</span>
       </a>
       <a href="" target="_blank">
-        <img src="icons/arrow.svg" alt="arrow icon" />
+        <img src="icons/arrow_blue.svg" alt="arrow icon" />
         <span>Regulamento Académico da UC</span>
       </a>
       <a href="" target="_blank">
-        <img src="icons/arrow.svg" alt="arrow icon" />
+        <img src="icons/arrow_blue.svg" alt="arrow icon" />
         <span>Regulamento de Direitos Especiais dos Estudantes da UC</span>
       </a>
       <a href="" target="_blank">
-        <img src="icons/arrow.svg" alt="arrow icon" />
+        <img src="icons/arrow_blue.svg" alt="arrow icon" />
         <span>Outros Regulamentos</span>
       </a>
     </div>
@@ -95,7 +95,7 @@ const Guides = () => (
         realização dos eventuais exames orais e da prova de recurso.
       </p>
     </div>
-  </div>
+  </section>
 );
 
 export default Guides;

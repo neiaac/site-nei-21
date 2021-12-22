@@ -1,7 +1,7 @@
 import { content, topic, blue } from './guides.module.scss';
 
 const Guides = () => (
-  <div className={content}>
+  <section className={content}>
     <div>
       <h2>Problemas pedagógicos. Quem contactar?</h2>
       <p>
@@ -131,7 +131,7 @@ const Guides = () => (
         <p className={blue}>provedordoestudante@ci.uc.pt</p>
       </div>
     </div>
-  </div>
+  </section>
 );
 
 export default Guides;
