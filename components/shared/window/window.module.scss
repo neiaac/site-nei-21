@@ -5,6 +5,10 @@
   height: fit-content;
   box-shadow: $shadow;
 
+  @media only screen and (max-width: $tablet) {
+    max-width: 100%;
+  }
+
   .tab {
     @include flex();
     @include container(0.75rem 1rem, $radius $radius 0 0, $blue);
@@ -32,6 +36,22 @@
     img {
       border-radius: $radius;
       object-fit: cover;
+    }
+
+    .eventInfo {
+      @include flex(column, $gap: 0.5rem);
+      margin-top: 2rem;
+      text-align: center;
+
+      h6,
+      span {
+        line-height: normal;
+      }
+
+      h6 {
+        @include font(normal, 400, 1rem, 1.5rem, $archivo-black);
+        text-transform: uppercase;
+      }
     }
   }
 }

@@ -1,0 +1,116 @@
+@import "/styles/mixins.scss";
+
+.landing {
+  width: 70%;
+  margin: 0 auto;
+
+  @media only screen and (max-width: $tablet) {
+    width: 90%;
+  }
+
+  .blue {
+    color: $blue
+  }
+
+  .hero {
+    @include flex(column);
+    margin-bottom: 50vh;
+    text-align: center;
+
+    @media only screen and (max-width: $tablet) {
+      margin-bottom: 30vh;
+    }
+
+    h1:not(:first-child) {
+      @include font(normal, 500, 4rem, 4.5rem, $archivo);
+
+      @media only screen and (max-width: $mobile) {
+        @include font(normal, 500, 3rem, 3.5rem, $archivo);
+      }
+    }
+
+    span {
+      @include font(normal, 500, 1.5rem, 2rem, $archivo);
+      margin: 3rem 0 8rem;
+      text-transform: uppercase;
+
+      @media only screen and (max-width: $mobile) {
+        @include font(normal, 500, 1rem, 1.5rem, $archivo);
+        margin: 3rem 0 5rem;
+      }
+    }
+  }
+
+  .info {
+    @include flex(column, $gap: 4rem);
+
+    .infoRow {
+      @include flex($gap: 4rem);
+
+      @media only screen and (max-width: $tablet) {
+        @include flex(column, $gap: 2rem);
+      }
+
+      .content {
+        width: 60%;
+
+        @media only screen and (max-width: $tablet) {
+          width: 100%;
+        }
+
+        h2 {
+          @include font(normal, 400, 3rem, 3.5rem, $archivo-black);
+          margin-bottom: 1rem;
+          text-transform: uppercase;
+        }
+
+        p {
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .events {
+    @include flex(column);
+    margin-top: 30vh;
+
+    .buttons {
+      @include flex($gap: 2rem);
+
+      @media only screen and (max-width: $tablet) {
+        @include flex(column, $gap: 1rem);
+      }
+
+      @media only screen and (max-width: $mobile) {
+        @include flex(column, flex-start, center, 1rem);
+        width: 100%;
+
+        >button {
+          width: 100%;
+        }
+      }
+    }
+
+    .eventsList {
+      @include grid(2, 1fr, repeat(3, 1fr));
+      margin: 3rem 0;
+
+      @media only screen and (max-width: $tablet) {
+        @include grid(2, 1fr, repeat(2, 1fr));
+      }
+
+      @media only screen and (max-width: $mobile) {
+        @include grid(2, 1fr, repeat(1, 1fr));
+      }
+
+      >div {
+        max-width: 100%;
+      }
+    }
+
+    >button {
+      align-self: flex-end;
+    }
+  }
+}

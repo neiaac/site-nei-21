@@ -1,16 +1,17 @@
 @import "/styles/mixins.scss";
 
 .member {
-  @include flex(column, center, center);
+  @include flex(column, $gap: 0.75rem);
+  line-height: normal;
 
   img {
-    width: 100%;
+    @include size(100%, 100%);
     border-radius: $radius;
+    object-fit: cover;
   }
 
   span:nth-child(2) {
-    @include font(normal, 400, 1rem, 1.5rem, $archivo-black);
-    margin: 0.75rem 0 0.25rem;
+    @include font(normal, 400, 1rem, normal, $archivo-black);
     text-transform: uppercase;
   }
 }
