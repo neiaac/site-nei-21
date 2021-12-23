@@ -1,5 +1,5 @@
-import styles from "./title.module.scss";
+import { title as TitleClass } from './title.module.scss';
 
-export default function title({ title }) {
-  return <h1 className={styles.title}>nei@aac:~/{title}</h1>
-}
+const Title = ({ title }) => <h1 className={TitleClass}>nei@aac:~/{title}</h1>;
+
+export default Title;

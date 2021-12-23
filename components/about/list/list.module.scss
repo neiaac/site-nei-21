@@ -1,5 +1,4 @@
 @import "/styles/mixins.scss";
-@import "/styles/variables.scss";
 
 .list {
   margin-bottom: 2rem;
@@ -12,22 +11,6 @@
   }
 
   ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-
-    li {
-      display: flex;
-      align-items: center;
-      margin-bottom: 0.25rem;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-
-      img {
-        margin-right: 0.5rem;
-      }
-    }
+    @include flex(column, flex-start, $gap: 0.25rem);
   }
 }

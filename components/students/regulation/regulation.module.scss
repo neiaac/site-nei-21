@@ -8,17 +8,12 @@
   }
 
   .links {
-    @include flex(column, flex-start);
+    @include flex(column, flex-start, $gap: 0.5rem);
     @include font($size: 1.25rem, $line: 1.5rem);
     color: $blue;
 
     a {
-      @include flex();
-      gap: 1rem;
-
-      &:not(:last-child) {
-        margin-bottom: 0.5rem;
-      }
+      @include flex($gap: 1rem);
     }
   }
 

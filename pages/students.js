@@ -1,11 +1,12 @@
 import { useState } from 'react';
+
 import Guides from '../components/students/guides';
 import Regulation from '../components/students/regulation';
 import Title from '../components/shared/title';
 import Button from '../components/shared/button';
 import { students, buttons } from '../styles/students.module.scss';
 
-export default function Students() {
+const Students = () => {
   const [title, setTitle] = useState('guia_pedagógico');
   const [active, setActive] = useState(true);
 
@@ -32,4 +33,6 @@ export default function Students() {
       {active ? <Guides /> : <Regulation />}
     </main>
   );
-}
+};
+
+export default Students;

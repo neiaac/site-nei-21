@@ -19,22 +19,14 @@
     margin: 0 auto;
 
     @media only screen and (max-width: $tablet) {
-      @include flex(column);
-
-      >*:not(:last-child) {
-        margin-bottom: 2vh;
-      }
+      @include flex(column, $gap: 2vh);
     }
 
     .social {
-      @include flex();
+      @include flex($gap: 2vw);
 
       >a {
         width: 2rem;
-
-        &:first-child {
-          margin-right: 2vw;
-        }
       }
     }
   }

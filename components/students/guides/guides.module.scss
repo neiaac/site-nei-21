@@ -36,7 +36,7 @@
     @include grid(2, 1fr, 2rem 1fr);
 
     >span {
-      @include flex(row, center, center);
+      @include flex($justify: center);
       @include container(0, $radius, $blue);
       @include size(2rem, 2rem);
       color: $white;

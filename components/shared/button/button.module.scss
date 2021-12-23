@@ -1,8 +1,8 @@
 @import "/styles/mixins.scss";
 
 .button {
-  @include font(normal, 400, 1rem, 1.25rem, $archivo-black);
   @include container(0.5rem 1.75rem);
+  @include font(normal, 400, 1rem, 1.25rem, $archivo-black);
   width: fit-content;
   color: $white;
   box-shadow: $shadow;

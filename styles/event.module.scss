@@ -34,14 +34,9 @@
     .list {
       @include flex($gap: 2rem);
       margin: 3rem 0;
-      padding: 0;
 
       @media only screen and (max-width: $tablet) {
         @include flex(column, flex-start, $gap: 2rem);
-      }
-
-      li {
-        @include flex($gap: 0.5rem);
       }
     }
 

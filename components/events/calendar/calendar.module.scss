@@ -11,11 +11,13 @@
       margin-top: 4rem;
     }
   }
+
   .month {
     @include font(normal, 400, 1.5rem, 2rem, $archivo-black);
     margin: 0 0 1rem 5%;
     color: $blue;
   }
+
   .day {
     margin: 0 0 1rem 10%;
 
