@@ -8,6 +8,10 @@
     @include size(100%, 100%);
     border-radius: $radius;
     object-fit: cover;
+
+    @media only screen and (max-width: $mobile) {
+      min-height: 11rem;
+    }
   }
 
   span:nth-child(2) {

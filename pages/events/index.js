@@ -7,7 +7,7 @@ import { events, images } from '../../styles/events.module.scss';
 const Events = () => {
   return (
     <main className={events}>
-      <Title title="equipa" />
+      <Title title="agenda" />
       <Button color="blue" text="2020-2021" />
       <section>
         <Calendar />
