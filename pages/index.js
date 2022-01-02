@@ -65,7 +65,7 @@ const Home = () => {
         <div className={buttons}>
           <Button
             color={active ? 'black' : 'grey'}
-            text="Recentes"
+            text="Passados"
             handler={() => setActive(!active)}
           />
           <Button

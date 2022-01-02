@@ -2,13 +2,11 @@
 
 .navbar {
   @include flex($justify: space-between);
-  @include size(80%, 10vh);  
+  @include size(80%, 10vh);
   margin: 0 auto 10vh;
 
   @media only screen and (max-width: $tablet) {
-    @include flex(column);
-    height: initial;
-    margin-bottom: 5vh;
+    margin: 2.5vh auto 10vh;
   }
 
   .logo {
@@ -20,7 +18,47 @@
     @include flex($gap: 3vw);
 
     @media only screen and (max-width: $tablet) {
-      @include flex(column, $gap: 1vh);
+      display: none;
+    }
+  }
+
+  .navigationMobile {
+    @include size(100vw, 100vh);
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: $blue;
+    background-color: $blue;
+
+    >div:first-child {
+      @include flex($justify: space-between);
+      @include size(80%, 10vh);
+      margin: 2.5vh auto 10vh;
+
+      >button:first-child {
+        color: $white;
+        background-color: transparent;
+      }
+    }
+
+    >div:last-child {
+      @include flex(column, $gap: 5vh);
+
+      >button {
+        @include font(normal, 400, 3rem, 3.5rem, $archivo-black);
+        color: $white;
+        background-color: transparent;
+        font-size: 3rem;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  >button {
+    display: none;
+
+    @media only screen and (max-width: $tablet) {
+      display: block;
     }
   }
 }
