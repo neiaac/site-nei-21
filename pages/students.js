@@ -4,7 +4,7 @@ import Guides from '../components/students/guides';
 import Regulation from '../components/students/regulation';
 import Title from '../components/shared/title';
 import Button from '../components/shared/button';
-import { students, buttons } from '../styles/students.module.scss';
+import { students, buttons, cable } from '../styles/students.module.scss';
 
 const Students = () => {
   const [title, setTitle] = useState('guia_pedagógico');
@@ -17,6 +17,7 @@ const Students = () => {
 
   return (
     <main className={students}>
+      <img className={cable} src="cable_students.svg" alt="Cable" />
       <Title title={`alunos/${title}`} />
       <div className={buttons}>
         <Button

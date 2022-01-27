@@ -14,6 +14,7 @@ import {
   buttons,
   eventsList,
   blue,
+  cable,
 } from '../styles/landing.module.scss';
 
 const Home = () => {
@@ -24,6 +25,7 @@ const Home = () => {
     <main className={landing}>
       <section className={hero}>
         <Title title="whoami" />
+        <img className={cable} src="cable_landing.svg" alt="Cable" />
         <h1 className={blue}>Núcleo de Estudantes de Informática</h1>
         <span>Associação Académica de Coimbra</span>
         <img src="icons/down.svg" alt="More content below" />

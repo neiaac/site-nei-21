@@ -13,6 +13,17 @@
     @include flex(column, flex-start, center);
   }
 
+  .cable {
+    position: absolute;
+    top: 50vh;
+    right: -5rem;
+    width: 25%;
+
+    @media only screen and (max-width: $tablet) {
+      display: none;
+    }
+  }
+
   .buttons {
     @include flex($gap: 2rem);
 
