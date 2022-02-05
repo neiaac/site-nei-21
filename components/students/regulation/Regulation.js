@@ -3,19 +3,19 @@ import { content, links } from './regulation.module.scss';
 const Guides = () => (
   <section className={content}>
     <div className={links}>
-      <a href="" target="_blank">
+      <a href="https://www.uc.pt/regulamentos/ga/nao-vigentes/regulamento_pedagogico_da_uc_2008.pdf" target="_blank">
         <img src="icons/arrow_blue.svg" alt="arrow icon" />
         <span>Regulamento Pedagógico da Universidade de Coimbra</span>
       </a>
-      <a href="" target="_blank">
+      <a href="https://www.uc.pt/regulamentos/ga/vigentes/Regulamento_805_A_2020_24_09_RAUC" target="_blank">
         <img src="icons/arrow_blue.svg" alt="arrow icon" />
         <span>Regulamento Académico da UC</span>
       </a>
-      <a href="" target="_blank">
+      <a href="https://www.uc.pt/governo/reitoria/oduc/RegDEEUC#:~:text=15%20elementos%20para%20os%20que,representam%20mais%20de%203000%20estudantes.&text=1%2D%20O%20estudante%20que%20pretenda,com%20exce%C3%A7%C3%A3o%20do%20aluno%20finalista." target="_blank">
         <img src="icons/arrow_blue.svg" alt="arrow icon" />
         <span>Regulamento de Direitos Especiais dos Estudantes da UC</span>
       </a>
-      <a href="" target="_blank">
+      <a href="https://www.uc.pt/academicos/regulamentos/regulamentos" target="_blank">
         <img src="icons/arrow_blue.svg" alt="arrow icon" />
         <span>Outros Regulamentos</span>
       </a>
