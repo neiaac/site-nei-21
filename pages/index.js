@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { db } from '../lib/firestore_config';
+import { doc, getDoc } from 'firebase/firestore/lite';
 
 import Button from '../components/shared/button';
 import Title from '../components/shared/title';
@@ -20,6 +22,58 @@ import {
 const Home = () => {
   const [active, setActive] = useState(true);
   const [seeMore, setSeeMore] = useState(false);
+  const [evList, setEvList] = useState({});
+
+  // fetch events from firebase
+  const eventsInfo = async () => {
+    const snapshot = await getDoc(doc(db, "events", '21_22'));
+    if (snapshot.exists()) {
+      return snapshot.data();
+    }
+  };
+  useEffect(() => {
+    eventsInfo().then((res) => { setEvList(res); });
+  }, []);
+
+  function getDate(d) {
+    if (!d) return new Date().toISOString().split('T')[0]
+    return new Date(d).toISOString().split('T')[0];
+  }
+
+  function reorderDate(d, sep) {
+    if (d.length == 10) {
+      let [day, month, year] = d.split(sep);
+      return getDate(`${year}${sep}${month}${sep}${day}`);
+    }
+  }
+
+  const displayEvents = () => {
+    if (Object.keys(evList).length != 0) {
+      const evArray = evList.event_info.reverse();
+      const end = evArray.findIndex(ev => getDate() > reorderDate(ev.date, '-'))
+      const upcoming = evArray.slice(0, end);
+      const past = evArray.slice(end, evArray.length);
+      var list;
+      if (active) {
+        console.log('Past Events: ', past);
+        list = past.map((ev, index) => {
+          return <Window img={ev.image_url} event={ev} key={index} />
+        });
+      }
+      else {
+        console.log('Upcoming Events: ', upcoming);
+        list = upcoming.map((ev, index) => {
+          return <Window img={ev.image_url} event={ev} key={index} />
+        });
+      }
+      return <div className={eventsList}>{list}{/* {seeMore ? (
+        <>
+          <Window img="about" event />
+          buceta
+        </>
+      ) : null} */}</div>;
+    }
+  }
 
   return (
     <main className={landing}>
@@ -68,32 +122,15 @@ const Home = () => {
           <Button
             color={active ? 'black' : 'grey'}
             text="Passados"
-            handler={() => setActive(!active)}
+            handler={() => { setActive(!active); }}
           />
           <Button
             color={!active ? 'black' : 'grey'}
             text="Próximos"
-            handler={() => setActive(!active)}
+            handler={() => { setActive(!active); }}
           />
         </div>
-        <div className={eventsList}>
-          <Window img="about" event />
-          <Window img="about" event />
-          <Window img="about" event />
-          <Window img="about" event />
-          <Window img="about" event />
-          <Window img="about" event />
-          {seeMore ? (
-            <>
-              <Window img="about" event />
-              <Window img="about" event />
-              <Window img="about" event />
-              <Window img="about" event />
-              <Window img="about" event />
-              <Window img="about" event />
-            </>
-          ) : null}
-        </div>
+        {displayEvents()}
         <Button
           color="blue"
           text={seeMore ? 'Ver menos' : 'Ver mais'}

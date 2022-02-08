@@ -17,7 +17,6 @@ const Team = () => {
   const [roles, setRoles] = useState(teamInfo('21_22'));
 
   const teamList = () => {
-    console.log(roles);
     if (Object.keys(roles).length != 0) {
       let memberList = roles.members.map((member, index) => {
         return <Member name={member.name} role={member.role} photo={member.image_url} />

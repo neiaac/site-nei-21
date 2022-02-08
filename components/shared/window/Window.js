@@ -11,9 +11,9 @@ const Window = ({ img, event }) => (
       <img src={img + '.png'} alt="" />
       {event ? (
         <div className={eventInfo}>
-          <h6>Nome do Evento</h6>
-          <span>Local</span>
-          <span>Data</span>
+          <h6>{event.name}</h6>
+          <span>{event.place}</span>
+          <span>{event.date} às {event.horas}</span>
         </div>
       ) : null}
     </div>
