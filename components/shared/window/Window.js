@@ -13,7 +13,7 @@ const Window = ({ img, event }) => (
         <div className={eventInfo}>
           <h6>{event.name}</h6>
           <span>{event.place}</span>
-          <span>{event.date} às {event.horas}</span>
+          <span>{event.date}{event.horas ? ` às ${event.horas}` : null}</span>
         </div>
       ) : null}
     </div>

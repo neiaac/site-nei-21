@@ -23,6 +23,7 @@ const Home = () => {
   const [active, setActive] = useState(true);
   const [seeMore, setSeeMore] = useState(false);
   const [evList, setEvList] = useState({});
+  var arrLen;
 
   // fetch events from firebase
   const eventsInfo = async () => {
@@ -47,31 +48,26 @@ const Home = () => {
     }
   }
 
+  function splitEventArray(evArray, start, stop) {
+    const arr = evArray.slice(start, stop);
+    if (arr.length <= 6) { arrLen = arr.length; return [arr, arr]; }
+    else return [arr, arr.slice(0, 6)];
+  }
+
+  function makeList(arr) {
+    return arr.map((ev, index) => {
+      return <Window img={ev.image_url} event={ev} key={index} />
+    });
+  }
+
   const displayEvents = () => {
     if (Object.keys(evList).length != 0) {
-      const evArray = evList.event_info.reverse();
-      const end = evArray.findIndex(ev => getDate() > reorderDate(ev.date, '-'))
-      const upcoming = evArray.slice(0, end);
-      const past = evArray.slice(end, evArray.length);
-      var list;
-      if (active) {
-        console.log('Past Events: ', past);
-        list = past.map((ev, index) => {
-          return <Window img={ev.image_url} event={ev} key={index} />
-        });
-      }
-      else {
-        console.log('Upcoming Events: ', upcoming);
-        list = upcoming.map((ev, index) => {
-          return <Window img={ev.image_url} event={ev} key={index} />
-        });
-      }
-      return <div className={eventsList}>{list}{/* {seeMore ? (
-        <>
-          <Window img="about" event />
-          buceta
-        </>
-      ) : null} */}</div>;
+      const evArray = evList.event_info;
+      const end = evArray.findIndex(ev => getDate() < reorderDate(ev.date, '-'));
+      var fullArray, colapsedArray;
+      if (active) { [fullArray, colapsedArray] = splitEventArray(evArray, 0, end); }
+      else { [fullArray, colapsedArray] = splitEventArray(evArray, end, evArray.length); }
+      return <div className={eventsList}> {seeMore ? makeList(fullArray) : makeList(colapsedArray)} </div>;
     }
   }
 
@@ -117,7 +113,7 @@ const Home = () => {
         </div>
       </section>
       <section className={events}>
-        <Title title="events" />
+        <Title title="featured_events" />
         <div className={buttons}>
           <Button
             color={active ? 'black' : 'grey'}
@@ -132,9 +128,10 @@ const Home = () => {
         </div>
         {displayEvents()}
         <Button
-          color="blue"
+          color={arrLen <= 6 ? 'grey' : 'blue'}
           text={seeMore ? 'Ver menos' : 'Ver mais'}
           handler={() => setSeeMore(!seeMore)}
+          isDisabled={arrLen <= 6}
         />
       </section>
     </main>
