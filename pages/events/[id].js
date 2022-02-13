@@ -1,4 +1,8 @@
 import { useRouter } from 'next/router';
+import { useState, useEffect } from 'react';
+
+import { doc, getDoc } from 'firebase/firestore/lite';
+import { db } from '../../lib/firestore_config';
 
 import Title from '../../components/shared/title';
 import Window from '../../components/shared/window';
@@ -6,45 +10,47 @@ import ListElement from '../../components/shared/list-element';
 
 import { event, info, list } from '../../styles/event.module.scss';
 
-const eventInfo = [
-  { name: '18-20, FEV 2021', icon: 'phone' },
-  { name: '21:30, 16:00', icon: 'phone' },
-  { name: 'Online', icon: 'phone' },
-  { name: 'Sem custos', icon: 'phone' },
-];
 
 const EventComponent = () => {
+  const [eventDetails, setEventDetails] = useState([]);
   const router = useRouter();
 
-  console.log(router.query.id);
+  // fetch specific eventDetails from firebase
+  const eventInfo = async () => {
+    const snapshot = await getDoc(doc(db, "events", '21_22'));
+    if (snapshot.exists()) {
+      const evs = snapshot.data().event_info;
+      return evs.filter(ev => {
+        return ev.id == router.query.id;
+      });
+    }
+  };
+
+  useEffect(() => {
+    eventInfo().then((res) => { setEventDetails(res[0]); console.log(res[0]); });
+  }, []);
 
   return (
-    <main className={event}>
-      <div className={info}>
-        <Title title="eventos" />
-        <h2>Torneio de Jogos</h2>
-        <p>
-          Com o começo do semestre, o teu núcleo favorito traz um novo torneio
-          de jogos 🎮 para ti e um grupo de amigos com 3 jogos à escolha com
-          inscrições livres!! 😃🎉 Vem ter connosco no Discord and gl hf! 💻🏆
-          Dia 18 - 21:30 - Rocket League 🏎️ - https://bit.ly/3qqbn5h Dia 19 -
-          21: 30 - Cs Go 🔫 - https://bit.ly/2N8aBLX Dia 20 - 16:00 - League of
-          Legends 🧂 - https://bit.ly/3aoxwvj A inscrição é livre, uma vez que
-          não há prémio, mas traz entusiasmo porque vai ser brutal!! 😎 Tens até
-          dia 17 de Fevereiro para te inscreveres e não precisas de ser aluno da
-          UC! O local do evento vai ser online na discord do NEI.
-        </p>
-        <ul className={list}>
-          {eventInfo.map((el) => {
-            return <ListElement key={el.name} icon={el.icon} name={el.name} />;
-          })}
-        </ul>
-        <button type="button" onClick={() => router.back()}>
-          <img src="../icons/arrow_white.svg" alt="Back button" />
-        </button>
-      </div>
-      <Window img="../event" />
-    </main>
+    <main className={event} >
+      <main className={event} >
+        <div className={info}>
+          <Title title="eventos" />
+          <h2>{eventDetails.name}</h2>
+          <p>{eventDetails.descricao}</p>
+          <ul className={list}>
+            <ListElement text={eventDetails.date} icon='calendar' />
+            <ListElement text={eventDetails.horas} icon='clock' />
+            <ListElement text={eventDetails.place} icon='location' />
+            {eventDetails.preco ? <ListElement text={eventDetails.preco} icon='euro' /> : null}
+            {eventDetails.link ? <ListElement text='Link' icon='link' url={eventDetails.link} /> : null}
+          </ul>
+          <button type="button" onClick={() => router.back()}>
+            <img src="../icons/arrow_white.svg" alt="Back button" />
+          </button>
+        </div>
+        <Window img={eventDetails.image_url} />
+      </main >
+    </main >
   );
 };
 

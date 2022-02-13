@@ -6,7 +6,7 @@ import { about, contacts, inline } from '../styles/about.module.scss';
 
 const About = () => (
   <main className={about}>
-    <Window img="about" />
+    <Window isMap={true} />
     <div className={contacts}>
       <Title title="sobre" />
       <List title="localização" content={locals} />

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-//import Image from 'next/image';
+import Image from 'next/image';
 
 import Button from '../button';
 
@@ -25,7 +25,9 @@ const Navbar = () => {
   return (
     <nav className={navbar}>
       <a className={logo}>
-        <Link href="/">nei</Link>
+        <Link href='/'>
+          <Image src='/Logotype.svg' height={75} width={75} />
+        </Link>
       </a>
       <div className={navigation}>
         <Link href="/events">
@@ -51,7 +53,7 @@ const Navbar = () => {
         <div className={navigationMobile}>
           <div>
             <button className={logo} onClick={() => changePage('/')}>
-              nei
+              <Image src='/Logotype_white.svg' height={75} width={75} />
             </button>
             <Button
               text="Close"

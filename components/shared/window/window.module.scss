@@ -30,6 +30,26 @@
     }
   }
 
+  .map_content {
+    @include container(10%, 0 0 $radius $radius, $lightgrey);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 30em 0 0 30em;
+
+    iframe {
+      position: absolute;
+      top: 7.5%;
+      left: 7.5%;
+      bottom: 0;
+      right: 0;
+      width: 85%;
+      height: 85%;
+      border: none;
+      border-radius: $radius;
+    }
+  }
+
   .content {
     @include container(10%, 0 0 $radius $radius, $lightgrey);
 
@@ -51,6 +71,11 @@
       h6 {
         @include font(normal, 400, 1rem, 1.5rem, $archivo-black);
         text-transform: uppercase;
+
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
       }
     }
   }

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { db } from '../lib/firestore_config';
 import { doc, getDoc } from 'firebase/firestore/lite';
 
+
 import Button from '../components/shared/button';
 import Title from '../components/shared/title';
 import Window from '../components/shared/window';
@@ -32,9 +33,11 @@ const Home = () => {
       return snapshot.data();
     }
   };
+
   useEffect(() => {
     eventsInfo().then((res) => { setEvList(res); });
   }, []);
+
   function getDate(d) {
     if (!d) return new Date().toISOString().split('T')[0]
     return new Date(d).toISOString().split('T')[0];
@@ -55,7 +58,9 @@ const Home = () => {
 
   function makeList(arr) {
     return arr.map((ev, index) => {
-      return <Window img={ev.image_url} event={ev} key={index} />
+      return (
+        <Window img={ev.image_url} event={ev} key={index} />
+      )
     });
   }
 

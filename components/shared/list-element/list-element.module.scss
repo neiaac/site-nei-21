@@ -2,4 +2,24 @@
 
 .listElement {
   @include flex($gap: 0.5rem);
+  
+  img {
+    width: 2em;
+    height: 2em;
+  }
+
+  a, span {
+    width: 4em;
+  }
+
+
+  a:hover {
+    text-decoration: underline 2px;
+    color: $blue;
+  }
+
+  &:hover {
+    color: $blue;
+    filter: invert(48%) sepia(92%) saturate(2847%) hue-rotate(175deg) brightness(104%) contrast(97%);
+  }
 }
