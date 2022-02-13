@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+//import Image from 'next/image';
 
 import Button from '../button';
 
@@ -23,9 +24,9 @@ const Navbar = () => {
 
   return (
     <nav className={navbar}>
-      <Link href="/">
-        <a className={logo}>nei</a>
-      </Link>
+      <a className={logo}>
+        <Link href="/">nei</Link>
+      </a>
       <div className={navigation}>
         <Link href="/events">
           <a>Agenda</a>

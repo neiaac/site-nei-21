@@ -29,6 +29,7 @@
     left: 0;
     color: $blue;
     background-color: $blue;
+    z-index: 101;
 
     >div:first-child {
       @include flex($justify: space-between);

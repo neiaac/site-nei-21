@@ -35,7 +35,6 @@ const Home = () => {
   useEffect(() => {
     eventsInfo().then((res) => { setEvList(res); });
   }, []);
-
   function getDate(d) {
     if (!d) return new Date().toISOString().split('T')[0]
     return new Date(d).toISOString().split('T')[0];
