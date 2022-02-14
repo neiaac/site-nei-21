@@ -14,7 +14,6 @@ const Window = ({ img, event, isMap }) => (
           width=''
           height=''
           title='Mapa da localização do Departamento de Engenharia Informática da Universidade de Coimbra'
-          allowfullscreen=""
           loading="lazy">
         </iframe>
       </div>

@@ -1,9 +1,9 @@
 export const locals = [
-  { name: 'Departamento de Engenharia Informática' },
-  { name: 'Faculdade de Ciências e Tecnologia' },
-  { name: 'Universidade de Coimbra' },
-  { name: 'Pólo II - Pinhal de Marrocos' },
-  { name: '3030-290 Coimbra' },
+  { name: 'Departamento de Engenharia Informática', icon: 'phone' },
+  { name: 'Faculdade de Ciências e Tecnologia', icon: 'phone' },
+  { name: 'Universidade de Coimbra', icon: 'phone' },
+  { name: 'Pólo II - Pinhal de Marrocos', icon: 'phone' },
+  { name: '3030-290 Coimbra', icon: 'phone' },
 ];
 
 export const contactsNei = [

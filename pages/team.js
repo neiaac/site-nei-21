@@ -19,7 +19,7 @@ const Team = () => {
   const teamList = () => {
     if (Object.keys(roles).length != 0) {
       let memberList = roles.members.map((member, index) => {
-        return <Member name={member.name} role={member.role} photo={member.image_url} />
+        return <Member key={index} name={member.name} role={member.role} photo={member.image_url} />
       });
       return <div className={list}>{memberList}</div>;
     }

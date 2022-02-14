@@ -7,7 +7,7 @@ const List = ({ title, content }) => (
     <h6>{title}</h6>
     <ul>
       {content.map((x) => {
-        return <ListElement key={x.name} icon={x.icon} name={x.name} />;
+        return <ListElement key={x.name} icon={x.icon} text={x.name} />;
       })}
     </ul>
   </div>

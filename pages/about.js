@@ -4,6 +4,7 @@ import Window from '../components/shared/window';
 import { locals, contactsNei, contactsDei } from '../utils/about';
 import { about, contacts, inline } from '../styles/about.module.scss';
 
+
 const About = () => (
   <main className={about}>
     <Window isMap={true} />
