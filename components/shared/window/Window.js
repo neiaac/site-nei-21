@@ -19,7 +19,7 @@ const Window = ({ img, event, isMap }) => (
       </div>
     ) : (
       <div className={content}>
-        <img src={img + '.png'} alt="" />
+        <img src={img} alt="" />
         {event ? (
           <Link href={`/events/${event.id}`}>
             <div className={eventInfo}>

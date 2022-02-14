@@ -98,10 +98,10 @@ const Home = () => {
               de Coimbra.
             </p>
           </div>
-          <Window img="about" />
+          <Window img='../photos/jornadas-ei+dm.jpg' />
         </div>
         <div className={infoRow}>
-          <Window img="about" />
+          <Window img="../photos/conversas-ex-alunos-dm.jpg" />
           <div className={content}>
             <h2>
               O que faz o <span className={blue}>NEI?</span>
