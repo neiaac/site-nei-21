@@ -99,7 +99,7 @@ const Guides = () => (
         <h3>Provedor do Estudante</h3>
         <p>
           A <span className={blue}>missão</span> do Provedor do Estudante é
-          velar pelo respeito pelos direitos e interesses legítimos dos
+          zelar pelo respeito pelos direitos e interesses legítimos dos
           estudantes. Quando toma conhecimento de um facto que coloque esses
           direitos ou interesses legítimos em causa, quer por comunicação de
           estudantes quer por qualquer outro meio minimamente credível, o

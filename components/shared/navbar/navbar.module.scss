@@ -4,14 +4,17 @@
   @include flex($justify: space-between);
   @include size(80%, 10vh);
   margin: 0 auto 10vh;
+  padding-top: 2em;
 
   @media only screen and (max-width: $tablet) {
     margin: 2.5vh auto 10vh;
   }
 
   .logo {
-    @include font(normal, 700, 3rem, 3.5rem, $archivo);
-    color: $blue;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .navigation {

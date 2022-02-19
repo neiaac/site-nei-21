@@ -10,6 +10,10 @@ import ListElement from '../../components/shared/list-element';
 
 import { event, info, list } from '../../styles/event.module.scss';
 
+// @TODO - arranjar maneira de saber o tamanho do array de eventos upfront
+/* export async function getStaticPaths() { } */
+
+// export async function getStaticPaths({ params }) { }
 
 const EventComponent = () => {
   const [eventDetails, setEventDetails] = useState([]);

@@ -24,6 +24,10 @@
     span:last-child {
       @include font(normal, 400, 1rem, 1.5rem, $archivo-black);
       margin-left: 1rem;
+      
+      a:hover {
+        text-decoration: underline;
+      }
     }
   }
 }

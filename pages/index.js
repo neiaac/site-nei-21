@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { db } from '../lib/firestore_config';
 import { doc, getDoc } from 'firebase/firestore/lite';
 
-
 import Button from '../components/shared/button';
 import Title from '../components/shared/title';
 import Window from '../components/shared/window';
@@ -67,7 +66,7 @@ const Home = () => {
   const displayEvents = () => {
     if (Object.keys(evList).length != 0) {
       const evArray = evList.event_info;
-      const end = evArray.findIndex(ev => getDate() < reorderDate(ev.date, '-'));
+      const end = evArray.findIndex(ev => getDate() <= reorderDate(ev.date, '-'));
       var fullArray, colapsedArray;
       if (active) { [fullArray, colapsedArray] = splitEventArray(evArray, 0, end); }
       else { [fullArray, colapsedArray] = splitEventArray(evArray, end, evArray.length); }
