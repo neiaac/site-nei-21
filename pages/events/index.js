@@ -8,7 +8,7 @@ const Events = () => {
 
   return (
     <main className={events}>
-      <Title title="agenda" />
+      <Title title="plano_de_atividades" />
       <Button color="blue" text="21-22" />
       <section>
         <Calendar />
