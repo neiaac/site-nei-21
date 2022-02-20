@@ -8,15 +8,15 @@ export const locals = [
 
 export const contactsNei = [
   { name: '239 790 002', icon: 'phone' },
-  { name: 'tp.cu.ied.tneduts@caaien', icon: 'phone' },
-  { name: 'tp.acimedaca@ien ', icon: 'phone' },
+  { name: 'neiaac@student.dei.uc.pt', icon: 'phone' },
+  { name: 'neiaac@gmail.com', icon: 'phone' },
   { name: 'Sala C4.3 (Torre C)', icon: 'phone' },
   { name: 'facebook.com/neiaac', icon: 'phone' },
 ];
 
 export const contactsDei = [
   { name: '239 790 000', icon: 'phone' },
-  { name: 'tp.cu.ied@ofni', icon: 'phone' },
+  { name: 'info@dei.uc.pt', icon: 'phone' },
   { name: 'dei.uc.pt', icon: 'phone' },
   { name: 'Dep.Engenharia.Informatica.U.Coimbra', icon: 'phone' },
 ];
