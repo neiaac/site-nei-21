@@ -20,7 +20,7 @@ import {
 } from '../styles/landing.module.scss';
 
 const Home = () => {
-  const [active, setActive] = useState(true);
+  const [active, setActive] = useState(false);
   const [seeMore, setSeeMore] = useState(false);
   const [evList, setEvList] = useState({});
   var arrLen;
